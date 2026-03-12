@@ -1,0 +1,6 @@
+﻿namespace Desktop_FleetManager_Flicinski_Sabisz.ViewModels;
+
+public class MainWindowViewModel : ViewModelBase
+{
+    public string Greeting { get; } = "Welcome to Avalonia!";
+}
