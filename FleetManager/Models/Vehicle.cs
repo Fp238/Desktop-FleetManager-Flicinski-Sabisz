@@ -20,9 +20,9 @@ public class Vehicle
    } = 0;
 
    [Reactive]
-   public string Status
+   public VehicleStatus Status
    {
       get;
       set;
-   } = string.Empty;
+   } = VehicleStatus.Available;
 }
