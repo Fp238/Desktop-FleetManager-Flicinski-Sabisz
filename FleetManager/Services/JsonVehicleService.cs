@@ -9,7 +9,7 @@ using FleetManager.Models;
 namespace FleetManager.Services;
 
 
-public class JsonVehicleService
+public class JsonVehicleService : IVehicleService
 {
     private const string FilePath="vehicles.json";
 
@@ -51,4 +51,55 @@ public class JsonVehicleService
     }
 
     
+    public async Task RefuelAsync(Vehicle vehicle, int amount)
+    {
+        if (vehicle.Status == VehicleStatus.InRoute)
+            return;
+
+        try
+        {
+            var vehicles = await GetVehiclesAsync();
+
+            var target = vehicles.FirstOrDefault(v =>
+                v.RegistrationNumber == vehicle.RegistrationNumber);
+
+            if (target == null) return;
+
+            target.FuelLevel = Math.Min(100, target.FuelLevel + amount);
+
+            await SaveVehiclesAsync(vehicles);
+        }
+        catch
+        {
+            Console.WriteLine($"Nieudane tankowanie pojazdu {vehicle.Name}");
+        }
+    }
+
+    
+    public async Task ChangeStatusAsync(Vehicle vehicle, VehicleStatus newStatus)
+    {
+        try
+        {
+            var vehicles = await GetVehiclesAsync();
+
+            var target = vehicles.FirstOrDefault(v =>
+                v.RegistrationNumber == vehicle.RegistrationNumber);
+
+            if (target == null) return;
+
+            if (newStatus == VehicleStatus.InRoute)
+            {
+                if (target.FuelLevel < 15 || target.Status == VehicleStatus.Service)
+                    return;
+            }
+
+            target.Status = newStatus;
+
+            await SaveVehiclesAsync(vehicles);
+        }
+        catch
+        {
+            Console.WriteLine($"Nieudana zmiana statusu pojazdu {vehicle.Name}");
+        }
+    }
 }
