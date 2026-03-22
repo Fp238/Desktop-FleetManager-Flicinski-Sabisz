@@ -1,5 +1,38 @@
 [
   {
-    
+    "Name": "Truck Alpha",
+    "RegistrationNumber": "WX 1234A",
+    "FuelLevel": 75,
+    "Status": "Available"
+  },
+  {
+    "Name": "Van Beta",
+    "RegistrationNumber": "WX 5678B",
+    "FuelLevel": 50,
+    "Status": "InRoute"
+  },
+  {
+    "Name": "Truck Gamma",
+    "RegistrationNumber": "WX 9012C",
+    "FuelLevel": 10,
+    "Status": "Available"
+  },
+  {
+    "Name": "Van Delta",
+    "RegistrationNumber": "WX 3456D",
+    "FuelLevel": 90,
+    "Status": "Service"
+  },
+  {
+    "Name": "Truck Epsilon",
+    "RegistrationNumber": "WX 7890E",
+    "FuelLevel": 15,
+    "Status": "Available"
+  },
+  {
+    "Name": "Van Zeta",
+    "RegistrationNumber": "WX 2468F",
+    "FuelLevel": 30,
+    "Status": "InRoute"
   }
 ]
