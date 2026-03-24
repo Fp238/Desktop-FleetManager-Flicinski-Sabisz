@@ -1,10 +1,68 @@
-<!-- (UserControl - widok) -->
-
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="FleetManager.Views.VehicleItemView">
-    Welcome to Avalonia!
+             xmlns:models="clr-namespace:FleetManager.Models"
+             mc:Ignorable="d" 
+             d:DesignWidth="340" 
+             d:DesignHeight="220"
+             x:DataType="models:Vehicle">
+
+    <Border Background="#2D2D2D"
+            BorderBrush="#555555"
+            BorderThickness="2"
+            CornerRadius="12"
+            Padding="18"
+            Margin="8"
+            Width="320">
+
+        <StackPanel Spacing="14">
+
+            <StackPanel Spacing="4">
+                <TextBlock Text="Nazwa pojazdu"
+                           FontSize="12"
+                           Foreground="#AAAAAA"/>
+
+                <TextBlock Text="{Binding Name}" 
+                           FontSize="20" 
+                           FontWeight="Bold" 
+                           Foreground="White"/>
+            </StackPanel>
+
+            <StackPanel Spacing="4">
+                <TextBlock Text="Numer rejestracyjny"
+                           FontSize="12"
+                           Foreground="#AAAAAA"/>
+
+                <TextBlock Text="{Binding RegistrationNumber}" 
+                           FontSize="15" 
+                           Foreground="#CCCCCC"/>
+            </StackPanel>
+
+            <StackPanel Spacing="8">
+                <TextBlock Text="Poziom paliwa" 
+                           FontSize="13" 
+                           Foreground="#AAAAAA"/>
+
+                <ProgressBar Value="{Binding FuelLevel}" 
+                             Minimum="0" 
+                             Maximum="100" 
+                             Height="26"
+                             Foreground="#22C55E"
+                             Background="#444444"
+                             CornerRadius="10"/>
+
+                <TextBlock Text="{Binding FuelLevel, StringFormat={}{0}%}" 
+                           HorizontalAlignment="Center"
+                           FontSize="15" 
+                           FontWeight="SemiBold"
+                           Foreground="#22C55E"/>
+            </StackPanel>
+
+            <TextBlock Text="{Binding Status}" 
+                       FontSize="14" 
+                       Foreground="#999999"/>
+
+        </StackPanel>
+    </Border>
 </UserControl>
