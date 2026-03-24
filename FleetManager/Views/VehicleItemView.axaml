@@ -1,13 +1,9 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:models="clr-namespace:FleetManager.Models"
-             mc:Ignorable="d" 
-             d:DesignWidth="340" 
-             d:DesignHeight="220"
+             x:Class="FleetManager.Views.VehicleItemView"
              x:DataType="models:Vehicle">
-
+    
     <Border Background="#2D2D2D"
             BorderBrush="#555555"
             BorderThickness="2"

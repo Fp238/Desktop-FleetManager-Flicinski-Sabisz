@@ -11,7 +11,7 @@ namespace FleetManager.Services;
 
 public class JsonVehicleService : IVehicleService
 {
-    private const string FilePath="vehicles.json";
+    private static string FilePath => Path.Combine(AppContext.BaseDirectory, "Assets", "vehicles.json");
 
     public async Task<List<Vehicle>> GetVehiclesAsync()
     {
