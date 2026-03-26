@@ -1,0 +1,58 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="FleetManager.Views.VehicleDetailWindow"
+        x:CompileBindings="False"
+        Title="Szczegóły pojazdu"
+        Width="400" Height="300">
+
+    <Border Background="#2D2D2D"
+            BorderBrush="#555555"
+            BorderThickness="2"
+            CornerRadius="12"
+            Padding="18"
+            Margin="10">
+
+        <StackPanel Spacing="16">
+
+            <TextBlock Text="{Binding Name}" 
+                       FontSize="18"
+                       FontWeight="Bold"
+                       Foreground="White"
+                       />
+            <TextBlock Text="{Binding RegistrationNumber}" 
+                       FontSize="15"
+                       Foreground="#CCCCCC"
+                       Margin="0, 0, 0, 20"
+                       />
+
+            <Button Content="Zatankowano"
+                    Width="140"
+                    Height="35"
+                    Background="#22C55E"
+                    Foreground="White"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    />
+
+            <ComboBox x:Name="StatusComboBox"
+                      SelectedItem="{Binding Status}"
+                      Width="140"
+                      Foreground="White"
+                      Background="#444444"
+                      Margin="0, 0, 0, 20"
+                      />
+
+            <Button Content="Zapisz"
+                    Click="CloseButton_Click"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    Width="100"
+                    Height="40"
+                    HorizontalAlignment="Center"
+                    FontWeight="Bold"
+                    Background="#22C55E"
+                    Foreground="White"/>
+
+        </StackPanel>
+    </Border>
+</Window>
