@@ -3,14 +3,15 @@
         xmlns:local="clr-namespace:FleetManager.Views"
         xmlns:vm="clr-namespace:FleetManager.ViewModels"
         x:Class="FleetManager.MainWindow"
-        Width="400" Height="600"
+        Width="450" 
+        Height="700"
         Title="Fleet Manager"
-        x:DataType="vm:MainWindowViewModel">
-
+        x:DataType="vm:MainWindowViewModel"
+        >
     <ListBox ItemsSource="{Binding Vehicles}">
         <ListBox.ItemTemplate>
             <DataTemplate>
-                <local:VehicleItemView />
+                <local:VehicleItemView DataContext="{Binding}" />
             </DataTemplate>
         </ListBox.ItemTemplate>
     </ListBox>

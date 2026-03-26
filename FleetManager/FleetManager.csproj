@@ -9,6 +9,9 @@
 
     <ItemGroup>
         <AvaloniaResource Include="Assets\**" />
+        <Content Include="vehicles.json">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
     </ItemGroup>
 
     <ItemGroup>
@@ -23,5 +26,9 @@
         </PackageReference>
         <PackageReference Include="ReactiveUI.Avalonia" Version="11.3.8" />
         <PackageReference Include="ReactiveUI.Fody" Version="19.5.41" />
+
+        <None Include="vehicles.json">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
     </ItemGroup>
 </Project>

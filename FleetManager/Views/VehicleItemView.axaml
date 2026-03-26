@@ -2,8 +2,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:models="clr-namespace:FleetManager.Models"
              x:Class="FleetManager.Views.VehicleItemView"
-             x:DataType="models:Vehicle">
-    
+             x:DataType="models:Vehicle"
+             >
     <Border Background="#2D2D2D"
             BorderBrush="#555555"
             BorderThickness="2"
@@ -13,27 +13,37 @@
             Width="320">
 
         <StackPanel Spacing="14">
+            <Grid HorizontalAlignment="Center" ShowGridLines="False">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                
+                
+                    <TextBlock Grid.Column="0" Grid.Row="0" Text="Nazwa pojazdu"
+                                              FontSize="12"
+                                              Foreground="#AAAAAA"
+                                              Margin="0, 0, 80, 10"
+                                              />
 
-            <StackPanel Spacing="4">
-                <TextBlock Text="Nazwa pojazdu"
-                           FontSize="12"
-                           Foreground="#AAAAAA"/>
+                    <TextBlock Grid.Column="0" Grid.Row="1" Text="{Binding Name}" 
+                               FontSize="20" 
+                               FontWeight="Bold" 
+                               Foreground="White"/>
 
-                <TextBlock Text="{Binding Name}" 
-                           FontSize="20" 
-                           FontWeight="Bold" 
-                           Foreground="White"/>
-            </StackPanel>
+                    <TextBlock Grid.Column="1" Grid.Row="0" Text="Numer rejestracyjny"
+                               FontSize="12"
+                               Foreground="#AAAAAA"/>
 
-            <StackPanel Spacing="4">
-                <TextBlock Text="Numer rejestracyjny"
-                           FontSize="12"
-                           Foreground="#AAAAAA"/>
-
-                <TextBlock Text="{Binding RegistrationNumber}" 
-                           FontSize="15" 
-                           Foreground="#CCCCCC"/>
-            </StackPanel>
+                    <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding RegistrationNumber}" 
+                               FontSize="15" 
+                               Foreground="#CCCCCC"/>
+            </Grid>
+            
 
             <StackPanel Spacing="8">
                 <TextBlock Text="Poziom paliwa" 
