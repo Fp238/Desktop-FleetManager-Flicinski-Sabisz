@@ -40,12 +40,31 @@ public partial class VehicleDetailWindow : Window
 
         vehicle.FuelLevel = 100;
     }
+    
+    
+    private async void StatusComboBoxChanged(object? sender, SelectionChangedEventArgs e)
+    {
+        if (DataContext is not Vehicle vehicle)
+            return;
 
+        if (sender is not ComboBox comboBox)
+            return;
+
+        if (comboBox.SelectedItem is not VehicleStatus newStatus)
+            return;
+
+        await _vehicleService.ChangeStatusAsync(vehicle, newStatus);
+
+        vehicle.Status = newStatus;
+    }
+
+    
     private void CloseButton(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
         this.Close();
     }
 
+    
     private void InitializeComponent()
     {
         AvaloniaXamlLoader.Load(this);
