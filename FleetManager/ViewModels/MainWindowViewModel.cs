@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.IO;
+using System.Threading.Tasks;
 using ReactiveUI;
 using FleetManager.Models;
 using FleetManager.Services;
@@ -25,6 +26,15 @@ public class MainWindowViewModel : ReactiveObject
 
         Console.WriteLine($"Loaded vehicles: {vehicles.Count}");
         Console.WriteLine(File.Exists("vehicles.json"));
+
+        Vehicles.Clear();
+        foreach (var v in vehicles)
+            Vehicles.Add(v);
+    }
+    
+    public async Task ReloadVehicles()
+    {
+        var vehicles = await _vehicleService.GetVehiclesAsync();
 
         Vehicles.Clear();
         foreach (var v in vehicles)

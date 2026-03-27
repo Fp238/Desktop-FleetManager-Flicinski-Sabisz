@@ -6,12 +6,12 @@
         Width="450" 
         Height="700"
         Title="Fleet Manager"
-        x:DataType="vm:MainWindowViewModel"
-        >
+        x:DataType="vm:MainWindowViewModel">
+
     <ListBox ItemsSource="{Binding Vehicles}">
         <ListBox.ItemTemplate>
             <DataTemplate>
-                <local:VehicleItemView DataContext="{Binding}" />
+                <local:VehicleItemView />
             </DataTemplate>
         </ListBox.ItemTemplate>
     </ListBox>

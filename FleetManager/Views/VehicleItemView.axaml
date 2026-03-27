@@ -67,7 +67,7 @@
 
             <TextBlock Text="{Binding Status}" 
                        FontSize="14" 
-                       Foreground="#999999"/>
+                       Foreground="White"/>
 
         </StackPanel>
     </Border>
