@@ -2,7 +2,7 @@
   {
     "Name": "Truck Alpha",
     "RegistrationNumber": "WX 1234A",
-    "FuelLevel": 75,
+    "FuelLevel": 73,
     "Status": "Available"
   },
   {
@@ -33,6 +33,18 @@
     "Name": "Van Zeta",
     "RegistrationNumber": "WX 2468F",
     "FuelLevel": 30,
+    "Status": "InRoute"
+  },
+  {
+    "Name": "Truck EpsilonII",
+    "RegistrationNumber": "WX 7900E",
+    "FuelLevel": 66,
+    "Status": "Available"
+  },
+  {
+    "Name": "Van ZetaII",
+    "RegistrationNumber": "WX 1354F",
+    "FuelLevel": 32,
     "Status": "InRoute"
   }
 ]

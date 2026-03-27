@@ -32,6 +32,7 @@
                     Foreground="White"
                     HorizontalContentAlignment="Center"
                     VerticalContentAlignment="Center"
+                    Click="RefuelButton"
                     />
 
             <ComboBox x:Name="StatusComboBox"
@@ -43,7 +44,7 @@
                       />
 
             <Button Content="Zapisz"
-                    Click="CloseButton_Click"
+                    Click="CloseButton"
                     HorizontalContentAlignment="Center"
                     VerticalContentAlignment="Center"
                     Width="100"
